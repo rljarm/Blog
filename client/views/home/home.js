@@ -4,13 +4,19 @@ angular.module('blog')
 
   // afPosts.$loaded();
   $scope.posts = Post.init();
-
+  $scope.postShown = {};
   $scope.viewToggle = false;
-  $scope.toggleView = function(){
-    $scope.viewToggle = true;
-  };
-
   $scope.toggleBack = function(){
     $scope.viewToggle = false;
+    location.reload();
+  };
+
+  $scope.showPost = function(post){
+    $scope.postShown = post;
+    $scope.viewToggle = true;
+  };
+  $scope.destroy = function(post){
+    Post.kill(post);
+    console.log(post);
   };
 }]);

@@ -16,5 +16,9 @@ function add(post){
     return afPosts.$add(post);
   }
 
-  return {add: add, init: init};
+function kill(post){
+  return afPosts.$remove(post);
+}
+
+  return {add: add, init: init, kill: kill};
 }]);

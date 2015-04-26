@@ -13,7 +13,10 @@ angular.module('blog')
     $state.go('home');
   });
 
+  $scope.refresh = function(){
+  $rootScope.viewToggle = false;
   $scope.logout = function(){
     User.logout();
+  };
   };
 }]);
