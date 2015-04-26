@@ -1,0 +1,8 @@
+.row
+  .col-xs-12
+  .form-group
+    label(for='title')
+    input.form-control#title(type='text', ng-model='post.title')
+    label(for='content') Content
+    textarea.form-control#content(autocomplete='on', maxlength='1500', ng-model='post.postMain')
+    button.btn.btn-info(ng-click='post(post)') Post

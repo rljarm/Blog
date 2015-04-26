@@ -1,0 +1,23 @@
+
+h1 Home
+.row(ng-hide='viewToggle')
+  .col-xs-12.col-md-8
+    ul(ng-repeat='post in posts')
+      li: button.btn.btn-danger.btn-lg(ng-click='toggleView()') {{post.title}}
+  .col-xs-12.col-md-4
+    h3 Make a Comment!
+    a.twitter-timeline(href='https://twitter.com/rljarm', data-widget-id='592054819923185664') Tweets by @rljarm
+    script
+      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+.row(ng-show='viewToggle')
+  .col-xs-12.col-md-8
+    ul(ng-repeat='post in posts')
+      li {{post.title}}
+      li {{post.createdAt | date:yyyy-MM-dd}}
+      li {{post.postMain}}
+      li: button(ng-click='toggleBack()').btn.btn-danger Back to Posts
+  .col-xs-12.col-md-4
+    h3 Make a Comment!
+    a.twitter-timeline(href='https://twitter.com/rljarm', data-widget-id='592054819923185664') Tweets by @rljarm
+    script
+      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");

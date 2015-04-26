@@ -1,0 +1,17 @@
+nav.navbar.navbar-default(ng-controller='NavCtrl')
+  .container-fluid
+    .navbar-header
+      button.navbar-toggle.collapsed(data-toggle="collapse", data-target="#navbar")
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(ui-sref='home') Dick's Blog
+    #navbar.collapse.navbar-collapse
+      ul.nav.navbar-nav.navbar-right(ng-show='activeUser')
+        li: a(ui-sref='post'): i.fa.fa-plus-square &nbsp; Post
+        li: a(href='http://dickarmstrongstoner.com'): i.fa.fa.fa-home &nbsp; Home
+        li: button.btn.btn-danger.btn-lg(ng-click='logout()'): i.fa.fa-sign-out &nbsp; {{activeUser.password.email}}
+      ul.nav.navbar-nav.navbar-right(ng-hide='activeUser')
+        li: a(href='http://dickarmstrongstoner.com'): i.fa.fa.fa-home &nbsp; Home
+        li: a(ui-sref='login'): i.fa.fa-key &nbsp;
